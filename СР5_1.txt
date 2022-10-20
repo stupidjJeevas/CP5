@@ -1,0 +1,26 @@
+def dvoich(chislo):
+    string = ''
+    while chislo>0:
+         string += str(chislo % 2)
+         chislo //= 2
+    result = string[::-1]
+    if chislo < 128:
+        result = (8- len(result))*'0'+ result
+    print(result)
+def vosmerich(chislo):
+    string = ''
+    while chislo>0:
+         string += str(chislo % 8)
+         chislo //= 8
+    result = string[::-1]
+    if chislo < 128:
+        result = (8- len(result))*'0'+ result
+    print(result)
+chislo = int(input('Введите число:'))
+sist =  int(input('Введите целевую систему счисления:'))
+if sist == 2:
+   dvoich(chislo)
+elif sist == 8:
+   vosmerich(chislo)
+else:
+   print('Введите корректную систему счисления')
